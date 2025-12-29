@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+python-jose
+passlib[bcrypt]
+slowapi
+pandas
+numpy
+scikit-learn
+joblib
+shap
+pymongo
+pytz
