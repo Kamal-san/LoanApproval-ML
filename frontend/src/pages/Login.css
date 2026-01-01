@@ -1,0 +1,89 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  margin:0;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.test{
+    padding:0;
+    margin-top:0;
+    margin-bottom: 0px;
+    color:crimson;
+    font-weight:bold;
+}
+
+.login-card {
+  background: rgb(255, 252, 235);
+  padding: 30px;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+  margin-right: 10px;
+  margin-left:10px;
+}
+
+.login-card h2 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #454545;
+  margin-bottom: 20px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.login-card input:focus {
+  border-color: #667eea;
+}
+
+.login-card button {
+  width: 108%;
+  padding: 10px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.login-card button:hover {
+  background: #5a67d8;
+}
+
+.login-card button:disabled {
+  background: #aaa;
+}
+
+.error {
+  margin-top: 10px;
+  color: red;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

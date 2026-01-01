@@ -1,0 +1,46 @@
+.shap-card {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.shap-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.shap-label {
+  width: 160px;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.shap-bar-wrapper {
+  flex: 1;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.shap-bar {
+  height: 100%;
+  border-radius: 6px;
+}
+
+.shap-bar.positive {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+.shap-bar.negative {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.shap-value {
+  width: 60px;
+  font-size: 13px;
+  text-align: right;
+}

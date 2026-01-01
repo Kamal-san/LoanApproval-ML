@@ -1,0 +1,32 @@
+body {
+    margin:0;
+  font-family: 'Times New Roman', Times, serif;
+  background: rgb(255, 255, 237);
+}
+
+button {
+
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #3c77f8;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+input, select {
+  padding: 8px;
+  margin: 6px 0;
+  width: 100%;
+}
+
+.card {
+  background: rgb(194, 255, 179);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
