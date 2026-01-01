@@ -29,10 +29,23 @@ import pytz
 
 from bson import ObjectId
 
+from fastapi.middleware.cors import CORSMiddleware
+
+
 # Rate Limiter
 limiter = Limiter(key_func=get_remote_address)
 
 app = FastAPI(title="Loan Approval API")
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.state.limiter = limiter
 
 app.add_exception_handler(
@@ -174,11 +187,11 @@ def predict(
     
     # Reason
 
-    reason = "Balanced profile"
+    reason = "Balanced profile, likely to be approved"
     if "credit_score" in top_factors_dict and top_factors_dict["credit_score"] < 0:
         reason = "Low credit score reduced approval chances"
     elif not loan_approved:
-        reason = "Overall risk factors outweigh positives"
+        reason = "Overall risk factors(Income to Loan amount ratio, Asset values) reduced approval chances"
 
     # Save to MongoDB
     
@@ -193,7 +206,7 @@ def predict(
             "reason": reason,
         },
         "top_factors": top_factors_dict,
-        "created_at": datetime.now(ist).strftime("%d:%m:%Y %H:%M:%S"),
+        "created_at": datetime.now(ist).strftime("%d:%m:%Y %I:%M:%S %p"),
     }
 
     try:
@@ -216,12 +229,18 @@ def predict(
 
 @app.get("/predictions")
 def get_predictions(current_user: dict = Depends(get_current_user)):
-    return list(
+    predictions = list(
         predictions_collection.find(
-            {"username": current_user["username"]},
-            {"_id": 0}
+            {"username": current_user["username"]}
         )
     )
+
+    # convert ObjectId to string
+    for p in predictions:
+        p["_id"] = str(p["_id"])
+
+    return predictions
+
 # deletee predictions predictions/object_id(Mongodb)
 @app.delete("/predictions/{prediction_id}")
 def delete_prediction(
@@ -262,5 +281,5 @@ def health_check():
     return {
         "status": status,
         "checks": checks,
-        "timestamp": datetime.now(ist).strftime("%d:%m:%Y %H:%M:%S"),
+        "timestamp": datetime.now(ist).strftime("%d:%m:%Y %I:%M:%S %p"),
     }

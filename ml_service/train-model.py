@@ -35,7 +35,7 @@ df.columns = [
     'loan_status'
 ]
 
-# 5. Separate target FIRST ✅
+# 5. Separate target variable
 y = df['loan_status']
 X = df.drop('loan_status', axis=1)
 
@@ -47,7 +47,7 @@ X['bank_assets_ratio'] = X['bank_av'] / (
     X['luxury_av']
 )
 
-# 7. One-hot encoding (ONLY FEATURES)
+# 7. One-hot encoding
 X = pd.get_dummies(X, drop_first=True)
 
 print("X shape:", X.shape)
@@ -66,4 +66,4 @@ model.fit(X, y)
 joblib.dump(model, "loan_model.pkl")
 joblib.dump(X.columns.tolist(), "model_columns.pkl")
 
-print("✅ Model and columns saved successfully")
+print("Model and columns saved successfully")
