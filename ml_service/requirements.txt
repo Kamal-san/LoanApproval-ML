@@ -3,6 +3,7 @@ uvicorn
 pydantic
 python-jose
 passlib[bcrypt]
+PyJWT==2.8.0
 slowapi
 pandas
 numpy
