@@ -2,34 +2,47 @@
 
 A full-stack, production-ready loan approval system that uses Machine Learning, FastAPI, and React to predict loan approval outcomes with explainable AI (SHAP) and secure user authentication.
 
-This project demonstrates end-to-end ML deployment, API design, authentication, model explainability, and a modern frontend — making it ideal for real-world financial decision-support systems and a strong developer portfolio.
+This project demonstrates end-to-end ML deployment, API design, authentication, model explainability, and a modern frontend — making it ideal for real-world financial decision-support systems.
 
+This system reflects real-world financial ML applications, focusing on:
 
-🧱 Tech Stack
-Backend
+- Transparency (Explainable AI)
 
-FastAPI
+- Security (JWT + protected routes)
 
-Python
+- Scalability (stateless API +  Mongo DB)
 
-scikit-learn
+- Rate limiting
 
-SHAP
+- Production readiness
 
-MongoDB
+- Clean architecture
 
-JWT Authentication
+## Tech Stack
+ # Backend
 
-SlowAPI (Rate Limiting)
+- FastAPI
 
-Frontend
+- Python
 
-React
+- scikit-learn
 
-Vite
+- SHAP
 
-Axios
+- MongoDB
 
-React Router
+- JWT Authentication
 
-Custom CSS (Responsive & Interactive)
+- SlowAPI (Rate Limiting)
+
+# Frontend
+
+- React
+
+- Vite
+
+- Axios
+
+- React Router
+
+- CSS (Responsive & Interactive)
