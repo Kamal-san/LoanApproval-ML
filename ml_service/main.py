@@ -40,7 +40,8 @@ app = FastAPI(title="Loan Approval API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173",
+                   "https://loan-approval-7hcq23vxm-kamaleshwarans-projects-3187a12c.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
