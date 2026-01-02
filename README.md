@@ -39,7 +39,7 @@ This system reflects real-world financial ML applications, focusing on:
 
 # Frontend
 
-loan-approval-ml-eight.vercel.app
+https://loan-approval-ml-eight.vercel.app/login
 
 - React
 
