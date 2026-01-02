@@ -37,9 +37,6 @@ limiter = Limiter(key_func=get_remote_address)
 
 app = FastAPI(title="Loan Approval API")
 
-
-from fastapi.middleware.cors import CORSMiddleware
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
