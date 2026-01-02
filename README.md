@@ -21,6 +21,8 @@ This system reflects real-world financial ML applications, focusing on:
 ## Tech Stack
  # Backend
 
+ https://loanapproval-ml.onrender.com
+
 - FastAPI
 
 - Python
@@ -36,6 +38,8 @@ This system reflects real-world financial ML applications, focusing on:
 - SlowAPI (Rate Limiting)
 
 # Frontend
+
+loan-approval-ml-eight.vercel.app
 
 - React
 
