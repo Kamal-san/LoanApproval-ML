@@ -38,11 +38,15 @@ limiter = Limiter(key_func=get_remote_address)
 app = FastAPI(title="Loan Approval API")
 
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173",
-                   "https://loan-approval-ml-eight.vercel.app",
-                   "https://loan-approval-7hcq23vxm-kamaleshwarans-projects-3187a12c.vercel.app"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://loan-approval-ml-eight.vercel.app",
+        "https://loan-approval-7hcq23vxm-kamaleshwarans-projects-3187a12c.vercel.app",
+    ],
     allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
