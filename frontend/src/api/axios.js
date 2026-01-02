@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://loanapproval-ml.onrender.com/docs",
+  baseURL: "https://loanapproval-ml.onrender.com",
 });
 
 api.interceptors.request.use((config) => {
